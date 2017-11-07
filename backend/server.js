@@ -17,4 +17,6 @@ app.post('/add', (req, res) => {
     return res.sendStatus(200);
 });
 
-app.listen(3000);
+app.listen(3000, () => {
+    console.log('listening on port 3000');
+});
