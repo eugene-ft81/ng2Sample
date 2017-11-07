@@ -1,0 +1,31 @@
+<mat-card class="example-container mat-elevation-z8">
+    <mat-card-header>
+        <mat-card-title>
+        <h2>List of Added Users</h2>
+        </mat-card-title>
+    </mat-card-header>
+      
+    <mat-card-content>
+            <mat-table #table [dataSource]="dataSource">  
+                <ng-container cdkColumnDef="name">
+                    <mat-header-cell *cdkHeaderCellDef class="example-header-cell"> <h3>User Name</h3> </mat-header-cell>
+                    <mat-cell *cdkCellDef="let row" class="example-cell"> {{row.name}}</mat-cell>
+                </ng-container>
+
+                <ng-container cdkColumnDef="age">
+                    <mat-header-cell *cdkHeaderCellDef class="example-header-cell"> <h3>Age</h3> </mat-header-cell>
+                    <mat-cell *cdkCellDef="let row" class="example-cell"> {{row.age}}</mat-cell>
+                </ng-container>
+                
+                <ng-container cdkColumnDef="email">
+                    <mat-header-cell *cdkHeaderCellDef class="example-header-cell"> <h3>Email</h3> </mat-header-cell>
+                    <mat-cell *cdkCellDef="let row" class="example-cell"> {{row.email}}</mat-cell>
+                </ng-container>                
+            
+                <mat-header-row *cdkHeaderRowDef="columns" class="example-header-row"></mat-header-row>
+
+                <mat-row *cdkRowDef="let row; columns: columns;" class="example-row"></mat-row>
+            </mat-table>
+    </mat-card-content>
+</mat-card>
+      
